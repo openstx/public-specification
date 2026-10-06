@@ -2,6 +2,8 @@ name: Specification Feedback
 description: Share feedback, report a problem, or suggest an improvement to the OpenSTX draft specification.
 title: "[Feedback]: "
 labels: ["spec-feedback", "needs-triage"]
+assignees:
+  - davide-vecchia
 body:
   - type: markdown
     attributes:
