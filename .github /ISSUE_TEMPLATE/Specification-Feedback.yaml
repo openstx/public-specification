@@ -1,0 +1,158 @@
+name: Specification Feedback
+description: Share feedback, report a problem, or suggest an improvement to the OpenSTX draft specification.
+title: "[Feedback]: "
+labels: ["spec-feedback", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reviewing the **OpenSTX Specification** and taking the time to give feedback.
+
+        This is a **draft specification** and is subject to change. All input is welcome, whether you are a
+        silicon vendor, module maker, stack developer, integrator, researcher, or simply curious.
+
+        **Before submitting:**
+        - Search [existing issues](../issues) to see if someone has already raised the same point. If so, add a comment or a 👍 there instead.
+        - One issue per topic, please. Separate concerns are easier to discuss, track, and resolve.
+        - Do not include confidential or proprietary information, or details of unpatched security vulnerabilities (see the security question below).
+
+  - type: dropdown
+    id: spec-section
+    attributes:
+      label: Specification section
+      description: Which part of the specification does your feedback relate to? Select all that apply.
+      multiple: true
+      options:
+        - General Description (cross-cutting concepts and primitives)
+        - Core Services
+        - RAL Services (Radio Abstraction Layer)
+        - Security
+        - Glossary
+        - Overall specification / structure
+        - Other / not sure
+    validations:
+      required: true
+
+  - type: input
+    id: location
+    attributes:
+      label: Page link and section / clause
+      description: Link to the page (and heading, table, figure, or primitive name if possible) so we can find exactly what you mean.
+      placeholder: "https://docs.openstxfoundation.org/docs/spec-general/primitives#..."
+    validations:
+      required: true
+
+  - type: input
+    id: spec-version
+    attributes:
+      label: Specification version or commit
+      description: The draft version, release tag, or commit hash you reviewed, if known. Helpful because the draft is changing.
+      placeholder: "e.g. draft-0.3, or commit abc1234"
+
+  - type: dropdown
+    id: feedback-type
+    attributes:
+      label: Type of feedback
+      description: What best describes your feedback?
+      options:
+        - Technical error (something appears incorrect)
+        - Ambiguity or unclear wording (could be interpreted more than one way)
+        - Inconsistency (conflicts with another part of the spec)
+        - Missing functionality or requirement
+        - Interoperability concern
+        - Security or privacy concern
+        - Feasibility or implementability concern
+        - Terminology or glossary
+        - Editorial (typo, grammar, formatting, broken link)
+        - Suggestion or enhancement
+        - Question or request for clarification
+        - General comment
+    validations:
+      required: true
+
+  - type: textarea
+    id: feedback
+    attributes:
+      label: Your feedback
+      description: Describe the issue, question, or idea. Be as specific as you can. Quote the relevant text from the spec where helpful.
+      placeholder: |
+        What did you read, what did you expect, and what is the concern?
+    validations:
+      required: true
+
+  - type: textarea
+    id: suggested-change
+    attributes:
+      label: Suggested change (optional)
+      description: If you have a proposed fix, alternative wording, or design, include it here. Concrete text is the easiest thing for the working group to act on.
+      placeholder: |
+        Current text:
+        > ...
+
+        Proposed text:
+        > ...
+
+  - type: textarea
+    id: rationale
+    attributes:
+      label: Rationale and impact (optional)
+      description: Why does this matter? Consider the effect on correctness, interoperability, implementation complexity, performance, power, latency, determinism, certification, or adoption.
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: How significant is this for you?
+      description: This helps the working group triage. It is your perspective and not a final priority.
+      options:
+        - Blocker (prevents implementation or interoperability)
+        - Major (significant problem, likely to cause issues)
+        - Minor (worth fixing, but not urgent)
+        - Nice to have (polish or optional improvement)
+        - Not sure
+
+  - type: textarea
+    id: implementation-context
+    attributes:
+      label: Implementation or use-case context (optional)
+      description: Share anything about your environment or use case that gives context to your feedback, such as target hardware or radio, deployment scenario, network scale, timing requirements, or whether you have a prototype or implementation.
+      placeholder: |
+        e.g. Evaluating the Core layer for an industrial sensor network with N nodes and a X ms latency budget...
+
+  - type: textarea
+    id: references
+    attributes:
+      label: References and supporting material (optional)
+      description: Links to related standards, papers, prior art, test results, logs, or diagrams. You can drag and drop images or files into this box.
+
+  - type: dropdown
+    id: security-confirmation
+    attributes:
+      label: Is this a security vulnerability?
+      description: |
+        Feedback about design-level security considerations in the spec is welcome here.
+        If you believe you have found an exploitable vulnerability, please do **not** describe it in a public issue. Contact the OpenSTX Foundation privately via https://openstxfoundation.org/contact.
+      options:
+        - "No, this is not a vulnerability report"
+        - "Not sure"
+      default: 0
+    validations:
+      required: true
+
+  - type: input
+    id: affiliation
+    attributes:
+      label: Organization or affiliation (optional)
+      description: Share it if you are comfortable doing so. It helps the working group understand the perspective behind the feedback.
+      placeholder: "e.g. Company, university, or independent"
+
+  - type: checkboxes
+    id: confirmations
+    attributes:
+      label: Confirmations
+      options:
+        - label: I searched existing issues and did not find a duplicate of this feedback.
+          required: true
+        - label: I have not included confidential, proprietary, or third-party copyrighted material in this issue.
+          required: true
+        - label: I understand the working group may use this feedback, including any suggested text, to improve the specification, in line with the project's contribution policy.
+          required: true
