@@ -6,5 +6,4 @@ The OpenSTX public specification was developed by the OpenSTX working group cont
 - Davide Vecchia (@davide-vecchia)
 - Markus Schuss (@schuschu)
 - Michael Baddeley (@mbaddeley)
-- Sean Mcilroy (@seanmcilroy29)
 - @c-at-work
